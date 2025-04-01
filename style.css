@@ -15,9 +15,10 @@ body {
   position: absolute;
   left: 50px;
   top: 50px;
-  width: 40px;
-  height: 40px;
+  width: 100px; 
+  height: 100px;
 }
+
 
 #llama img {
   width: 100%;
