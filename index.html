@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Llama Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Platformer</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="game-area">
-    <div id="llama">
-      <img src="llama_64x64.png" alt="Llama" />
-    </div>
-    <div class="door" data-link="projects.html" style="left: 300px; top: 100px;"></div>
-    <div class="door" data-link="summary.html" style="left: 100px; top: 250px;"></div>
+  <div class="parallax">
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+    <div class="layer layer4"></div>
+    <div class="layer layer5"></div>
   </div>
-  <script src="script_with_animation.js"></script>
+
+  <div class="game-area">
+    <div id="character"></div>
+    <div class="instructions">
+      ← → Move &nbsp;&nbsp; ↑ Jump &nbsp;&nbsp; ↓ Crouch
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
