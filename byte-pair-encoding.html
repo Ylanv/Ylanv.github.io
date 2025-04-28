@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte-Pair Encoding</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/bpe-demo.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Byte-Pair Encoding (BPE)</h1>
+        <p>A tokenization algorithm used in NLP.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Explanation</h2>
+            <p>Byte-Pair Encoding (BPE) is a simple and efficient way to tokenize text by replacing frequently occurring pairs of symbols with a single symbol.</p>
+        </section>
+        <section>
+            <h2>Algorithm</h2>
+            <pre>
+def byte_pair_encoding(text, vocab_size):
+    # Initialize with all characters
+    vocab = {char: text.count(char) for char in set(text)}
+    while len(vocab) < vocab_size:
+        # Find most common pair
+        pairs = {}
+        for word in text.split():
+            for i in range(len(word) - 1):
+                pair = word[i:i + 2]
+                pairs[pair] = pairs.get(pair, 0) + 1
+        most_common = max(pairs, key=pairs.get)
+        text = text.replace(most_common, ''.join(most_common))
+    return text
+            </pre>
+        </section>
+        <section>
+            <h2>Try It Yourself</h2>
+            <label for="input-text">Input Text:</label>
+            <textarea id="input-text" rows="4" cols="50"></textarea>
+            <br>
+            <label for="vocab-size">Vocabulary Size:</label>
+            <input type="number" id="vocab-size" min="1" value="10">
+            <br>
+            <button id="run-bpe">Run Byte-Pair Encoding</button>
+            <h3>Output:</h3>
+            <pre id="output"></pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Interactive Notebook</p>
+    </footer>
+</body>
+</html>
